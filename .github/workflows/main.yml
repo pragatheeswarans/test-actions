@@ -23,7 +23,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Hotfix from Production to Master
       id: hotfix-master
-      uses: pragatheeswarans/hotfix-production-master-action@v1.0
+      uses: ./.github/actions/hotfix-production-master-action
       with:
         merge-commit: ${{ github.sha }}
     - name: 'Output the commit-sha'
