@@ -1,14 +1,28 @@
 name: 'Hotfix Production to Master'
 description: 'To cherrypick the hotfix commit merged to Production and create a PR to the master branch'
 inputs:
-  mergeCommit:
-    description: 'The merge commit of the hotfix'
+  who-to-greet:  # id of input
+    description: 'Who to greet'
     required: true
-  outputs:
-    commitHash:
-      description: 'Outputs the commit hash of the cherrypicked commit'
-  runs:
-    using: 'docker'
-    image: 'Dockerfile'
-    args:
-      - ${{ inputs.mergeCommit }}
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+
+# inputs:
+#   mergeCommit:
+#     description: 'The merge commit of the hotfix'
+#     required: true
+#   outputs:
+#     commitHash:
+#       description: 'Outputs the commit hash of the cherrypicked commit'
+#   runs:
+#     using: 'docker'
+#     image: 'Dockerfile'
+#     args:
+#       - ${{ inputs.mergeCommit }}
