@@ -25,6 +25,6 @@ jobs:
       id: hotfix-master
       uses: ./.github/actions/hotfix-production-master-action
       with:
-        merge-commit: ${{ github.sha }}
+        mergeCommit: ${{ github.sha }}
     - name: 'Output the commit-sha'
-      run: echo "The output was ${{ steps.hotfix-master.outputs.commit-hash }}"
+      run: echo "The output was ${{ steps.hotfix-master.outputs.commitHash }}"
