@@ -20,5 +20,6 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Yarn Audit
-      id: yarn-audit
-      uses: pragatheeswarans/yarn-audit-action@v1.0.4
+      uses: pragatheeswarans/yarn-audit-action@v1.0.5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
