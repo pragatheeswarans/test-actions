@@ -20,12 +20,12 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Yarn Audit
-      uses: pragatheeswarans/yarn-audit-action@v1.0.19
+      uses: pragatheeswarans/yarn-audit-action@v1.0.20
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         assignee: 'pragatheeswarans'
         label: 'audit-issues'
         description: 'High severity Issues are found in your repository. Please check them ASAP.'
         paths: |
-          '.'
-          'integrations'
+          .
+          integrations
